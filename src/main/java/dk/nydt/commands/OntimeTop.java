@@ -104,6 +104,12 @@ public class OntimeTop implements CommandExecutor {
             }
 
         } else if (args[0].equalsIgnoreCase("reload")) {
+            String perm = Main.configYML.getString("Reload.Permission");
+            if(!p.hasPermission(perm)) {
+                p.sendMessage(Chat.colored("&cDette har du ikke adgang til"));
+                return false;
+            }
+
             boolean reloadSuccess;
             try {
                 Main.config.reloadConfig();
