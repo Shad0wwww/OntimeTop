@@ -2,6 +2,7 @@ package dk.nydt;
 
 import dk.nydt.commands.Ontime;
 import dk.nydt.commands.OntimeTop;
+import dk.nydt.events.InventoryListener;
 import dk.nydt.events.JoinListener;
 import dk.nydt.events.QuitListener;
 import dk.nydt.tasks.TimeUpdate;
@@ -30,6 +31,7 @@ public final class Main extends JavaPlugin {
         //register events
         getServer().getPluginManager().registerEvents(new QuitListener(this), this);
         getServer().getPluginManager().registerEvents(new JoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new InventoryListener(this), this);
 
         //ontime yml
         if (!(new File(getDataFolder(), "ontime.yml")).exists())
@@ -43,7 +45,7 @@ public final class Main extends JavaPlugin {
             saveResource("config.yml", false);
 
         config = new Config(this, null, "config.yml");
-        configYML = ontime.getConfig();
+        configYML = config.getConfig();
 
         //updates on time every 10 minutes
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new TimeUpdate(), 0L, 12000L);

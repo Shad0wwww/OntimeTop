@@ -6,11 +6,17 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 public class FormatTime {
-    public String calculateTime(long seconds, String format) {
-        long sec = seconds % 60;
-        long minutes = seconds % 3600 / 60;
-        long hours = seconds % 86400 / 3600;
-        long days = seconds / 86400;
+
+    public String calculateTime(int seconds) {
+
+
+        int days = (int) Math.floor(seconds / 86400);
+        int hours = (int) Math.floor((seconds - (days * 86400)) / 3600);
+        int minutes = (int) Math.floor((seconds - ((days * 86400) + (hours * 3600))) / 60);
+        int second = (int) Math.floor(seconds - ((days * 86400) + (hours * 3600) + (minutes * 60)));
+
+        System.out.println(days + " days " + hours + " hours " + minutes + " minutes " + second + " seconds");
+
 
         String formatType = Main.configYML.getString(format+".score");
         formatType = formatType.replace("%d", String.valueOf(days));
