@@ -16,8 +16,8 @@ import java.io.File;
 public final class Main extends JavaPlugin {
     public static Main instance;
     private static PluginManager pluginManager;
-    public static Config ontime;
-    public static FileConfiguration ontimeYML;
+    public static Config ontime, config;
+    public static FileConfiguration ontimeYML, configYML;
     @Override
     public void onEnable() {
         pluginManager = getServer().getPluginManager();
@@ -31,12 +31,19 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new QuitListener(this), this);
         getServer().getPluginManager().registerEvents(new JoinListener(this), this);
 
-        //on time yml
+        //ontime yml
         if (!(new File(getDataFolder(), "ontime.yml")).exists())
             saveResource("ontime.yml", false);
 
         ontime = new Config(this, null, "ontime.yml");
         ontimeYML = ontime.getConfig();
+
+        //config yml
+        if (!(new File(getDataFolder(), "config.yml")).exists())
+            saveResource("config.yml", false);
+
+        config = new Config(this, null, "config.yml");
+        configYML = ontime.getConfig();
 
         //updates on time every 10 minutes
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new TimeUpdate(), 0L, 12000L);
