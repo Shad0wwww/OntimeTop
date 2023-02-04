@@ -1,0 +1,9 @@
+name: OntimeTop
+version: '${project.version}'
+main: dk.nydt.Main
+authors: [ Nydt, iskoldcool ]
+description: Top 3 most ontime
+website: mcstore.dk
+commands:
+  Ontime:
+    description: gets ontime of player
