@@ -1,6 +1,7 @@
 package dk.nydt.commands;
 
 import dk.nydt.Main;
+import dk.nydt.utils.Chat;
 import dk.nydt.utils.FormatTime;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -26,13 +27,13 @@ public class OntimeTop implements CommandExecutor {
         int score3 = Main.ontimeYML.getInt("Accounts."+top[2]);
         int score4 = Main.ontimeYML.getInt("Accounts."+top[3]);
         int score5 = Main.ontimeYML.getInt("Accounts."+top[4]);
-        p.sendMessage("------[ Top 5 Gamers ]------");
+        p.sendMessage(Chat.colored("------[ Top 5 Gamers ]------"));
         if(!(top[0]==null)&&!(score1==0)) p.sendMessage("#1 " + Bukkit.getOfflinePlayer(UUID.fromString(top[0])).getName() + " \u00BB " + FormatTime.calculateTime(score1));
         if(!(top[1]==null)&&!(score2==0)) p.sendMessage("#2 " + Bukkit.getOfflinePlayer(UUID.fromString(top[1])).getName()  + " \u00BB " + FormatTime.calculateTime(score2));
         if(!(top[2]==null)&&!(score3==0)) p.sendMessage("#3 " + Bukkit.getOfflinePlayer(UUID.fromString(top[2])).getName()  + " \u00BB " + FormatTime.calculateTime(score3));
         if(!(top[3]==null)&&!(score4==0)) p.sendMessage("#4 " + Bukkit.getOfflinePlayer(UUID.fromString(top[3])).getName()  + " \u00BB " + FormatTime.calculateTime(score4));
         if(!(top[4]==null)&&!(score5==0)) p.sendMessage("#5 " + Bukkit.getOfflinePlayer(UUID.fromString(top[4])).getName()  + " \u00BB " + FormatTime.calculateTime(score5));
-        p.sendMessage("------[ ---------- ]------");
+        p.sendMessage(Chat.colored("------[ ---------- ]------"));
 
 
 
