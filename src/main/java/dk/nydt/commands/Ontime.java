@@ -1,5 +1,7 @@
 package dk.nydt.commands;
 
+import dk.nydt.Main;
+import dk.nydt.utils.Chat;
 import dk.nydt.utils.FormatTime;
 import dk.nydt.utils.TimeUtils;
 import org.bukkit.Bukkit;
@@ -17,7 +19,7 @@ public class Ontime implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player p = (Player) sender;
-        if (args.length > 0) {
+        if (args.length == 1) {
             OfflinePlayer player = Bukkit.getOfflinePlayer(Bukkit.getPlayer(args[0]).getUniqueId());
             if (!player.hasPlayedBefore()) {
                 p.sendMessage("spiller har ikke været inde før");
@@ -32,6 +34,7 @@ public class Ontime implements CommandExecutor {
                 int time = TimeUtils.getOntime(player);
                 p.sendMessage("Spilleren " + player.getName() + " har " + FormatTime.calculateTime(time) + " sekunder");
             }
+
         } else {
             int time = p.getStatistic(Statistic.PLAY_ONE_TICK) / 20;
             // RECIVES YOUR OWN ACCURATE TIME

@@ -2,7 +2,7 @@ name: OntimeTop
 version: '${project.version}'
 main: dk.nydt.Main
 api-version: 1.8
-authors: [ Nydt, iskoldcool ]
+authors: [ Nydt, iskoldcool, Shad0wsense ]
 description: Top 3 most ontime
 website: mcstore.dk
 commands:
