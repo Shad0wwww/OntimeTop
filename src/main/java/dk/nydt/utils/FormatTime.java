@@ -16,9 +16,6 @@ public class FormatTime {
         int minutes = (int) Math.floor((seconds - ((days * 86400) + (hours * 3600))) / 60);
         int second = (int) Math.floor(seconds - ((days * 86400) + (hours * 3600) + (minutes * 60)));
 
-        System.out.println(days + " days " + hours + " hours " + minutes + " minutes " + second + " seconds");
-
-
         String formatType = Main.configYML.getString("Settings.score");
         formatType = formatType.replaceAll("%d", String.valueOf(days));
         formatType = formatType.replaceAll("%h", String.valueOf(hours));
