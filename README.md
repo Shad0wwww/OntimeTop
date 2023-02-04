@@ -27,6 +27,10 @@ GUI:
   head-name: "&5&lONTIME &f&lTOP"
 
 
+ontime-messages:
+  ontime: "%player% has played for %score%"
+  ontime-error: "&c%player% was not found!"
+
 #Reload config
 Reload:
   Permission: "ontime.admin"
