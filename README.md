@@ -1,6 +1,6 @@
 Easy to use
 
-DEFAULT CONFIG
+**DEFAULT CONFIG**
 
 ```
 Settings:
