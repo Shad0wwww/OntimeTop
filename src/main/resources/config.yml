@@ -3,12 +3,12 @@ Settings:
   Chat: false #Sends the top 5 most online players in a chat
 
 Chat:
-  top-line: "&8&m------&8[ &a&lONTIME &f&lTOP &8]&m-------"
+  top-line: "&8&m------&8[ &5&lONTIME &f&lTOP &8]&m-------"
   placement: "&6#%placement%"
   name-color: "&e"
   arrow: "&8»"
   score: "%d days, %h hours, %m minutes, %s seconds"
-  bottom-line: "&8&m------&8[ &a&lONTIME &f&lTOP &8]&m-------"
+  bottom-line: "&8&m------&8[ &5&lONTIME &f&lTOP &8]&m-------"
 
 GUI:
   top-row: "&8"
