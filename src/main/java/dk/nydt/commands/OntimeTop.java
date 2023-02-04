@@ -27,17 +27,31 @@ public class OntimeTop implements CommandExecutor {
         int score3 = Main.ontimeYML.getInt("Accounts."+top[2]);
         int score4 = Main.ontimeYML.getInt("Accounts."+top[3]);
         int score5 = Main.ontimeYML.getInt("Accounts."+top[4]);
-        p.sendMessage(Chat.colored("------[ Top 5 Gamers ]------"));
-        if(!(top[0]==null)&&!(score1==0)) p.sendMessage("#1 " + Bukkit.getOfflinePlayer(UUID.fromString(top[0])).getName() + " \u00BB " + FormatTime.calculateTime(score1));
-        if(!(top[1]==null)&&!(score2==0)) p.sendMessage("#2 " + Bukkit.getOfflinePlayer(UUID.fromString(top[1])).getName()  + " \u00BB " + FormatTime.calculateTime(score2));
-        if(!(top[2]==null)&&!(score3==0)) p.sendMessage("#3 " + Bukkit.getOfflinePlayer(UUID.fromString(top[2])).getName()  + " \u00BB " + FormatTime.calculateTime(score3));
-        if(!(top[3]==null)&&!(score4==0)) p.sendMessage("#4 " + Bukkit.getOfflinePlayer(UUID.fromString(top[3])).getName()  + " \u00BB " + FormatTime.calculateTime(score4));
-        if(!(top[4]==null)&&!(score5==0)) p.sendMessage("#5 " + Bukkit.getOfflinePlayer(UUID.fromString(top[4])).getName()  + " \u00BB " + FormatTime.calculateTime(score5));
-        p.sendMessage(Chat.colored("------[ ---------- ]------"));
+
+        String chat = Main.configYML.getString("Settings.Chat").toLowerCase();
+        String gui = Main.configYML.getString("Settings.GUI").toLowerCase();
+
+        if (chat.equals("true")) {
+            p.sendMessage(Chat.colored("------[ Top 5 Gamers ]------"));
+            if (!(top[0] == null) && !(score1 == 0))
+                p.sendMessage("#1 " + Bukkit.getOfflinePlayer(UUID.fromString(top[0])).getName() + " \u00BB " + FormatTime.calculateTime(score1, "chat"));
+            if (!(top[1] == null) && !(score2 == 0))
+                p.sendMessage("#2 " + Bukkit.getOfflinePlayer(UUID.fromString(top[1])).getName() + " \u00BB " + FormatTime.calculateTime(score2, "chat"));
+            if (!(top[2] == null) && !(score3 == 0))
+                p.sendMessage("#3 " + Bukkit.getOfflinePlayer(UUID.fromString(top[2])).getName() + " \u00BB " + FormatTime.calculateTime(score3, "chat"));
+            if (!(top[3] == null) && !(score4 == 0))
+                p.sendMessage("#4 " + Bukkit.getOfflinePlayer(UUID.fromString(top[3])).getName() + " \u00BB " + FormatTime.calculateTime(score4, "chat"));
+            if (!(top[4] == null) && !(score5 == 0))
+                p.sendMessage("#5 " + Bukkit.getOfflinePlayer(UUID.fromString(top[4])).getName() + " \u00BB " + FormatTime.calculateTime(score5, "chat"));
+            p.sendMessage(Chat.colored("------[ ---------- ]------"));
+        }
+        if (gui.equals("true")) {
+            String inv_name =  Main.configYML.getString("GUI.GUI-name");
+
+            Inventory inv = Bukkit.createInventory(null, 9*5, inv_name);
 
 
-
-
+        }
         return true;
     }
 

@@ -1,4 +1,4 @@
-settings:
+Settings:
   GUI: true #Opens top 5 most online players in a GUI
   Chat: false #Sends the top 5 most online players in a chat
 
@@ -10,3 +10,15 @@ Chat:
   score: "%d days, %h hours, %m minutes, %s seconds"
   bottom-line: "&8&m------&8[ &a&lONTIME &f&lTOP &8]&m-------"
 
+GUI:
+  top-row: "&8"
+  buttom-row: "&f"
+  GUI-name: "&8[ &5&lONTIME &f&lTOP &8]"
+
+  #Du finder linket nederest inde på minecraft-heads.com - husk at gøre det til http istedet for https
+  GUI-head: "http://textures.minecraft.net/texture/a8be1dfc9b743ea838d5383c305a9aa5c5a403fb670fbb5210d4c143bc9bf026"
+  head-name: "&8&m------&8[ &5&lONTIME &f&lTOP &8]&m-------"
+  placement: "&6#%placement%"
+  name-color: "&e"
+  arrow: "&8»"
+  score: "%d days, %h hours, %m minutes, %s seconds"
