@@ -56,6 +56,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onDisable() {
         ontime.saveConfig();
+        config.saveConfig();
     }
 
     public static Main getInstance(){

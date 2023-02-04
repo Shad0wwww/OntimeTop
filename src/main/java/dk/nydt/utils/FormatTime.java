@@ -18,12 +18,12 @@ public class FormatTime {
         System.out.println(days + " days " + hours + " hours " + minutes + " minutes " + second + " seconds");
 
 
-        String formatType = Main.configYML.getString(format+".score");
-        formatType = formatType.replace("%d", String.valueOf(days));
-        formatType = formatType.replace("%h", String.valueOf(hours));
-        formatType = formatType.replace("%m", String.valueOf(minutes));
-        formatType = formatType.replace("%s", String.valueOf(sec));
-        return (formatType);
+        String formatType = Main.configYML.getString("Settings.score");
+        formatType = formatType.replaceAll("%d", String.valueOf(days));
+        formatType = formatType.replaceAll("%h", String.valueOf(hours));
+        formatType = formatType.replaceAll("%m", String.valueOf(minutes));
+        formatType = formatType.replaceAll("%s", String.valueOf(second));
+        return (Chat.colored(formatType));
     }
 
 }
