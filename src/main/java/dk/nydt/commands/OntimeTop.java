@@ -141,6 +141,12 @@ public class OntimeTop implements CommandExecutor {
         return top;
     }
 
+    /**
+     * Ontimetop.
+     *
+     * @return string value of top
+     */
+
     public String[] getTop5(){
 
         for(String user: Main.ontimeYML.getConfigurationSection("Accounts").getKeys(true)) {
